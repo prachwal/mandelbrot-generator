@@ -1,128 +1,7 @@
-// Import konfiguracji i funkcji (symulujemy import dla przeglądarki)
-// W prawdziwej implementacji te pliki byłyby importowane jako moduły ES6
-
-// Konfiguracja i predefiniowane punkty
-const defaultConfig = {
-    width: 800,
-    height: 600,
-    maxIterations: 100,
-    escapeRadius: 2,
-    zoom: 1,
-    centerX: -0.5,
-    centerY: 0,
-    colorPalette: 'rainbow'
-};
-
-const interestingPoints = {
-    classic: { centerX: -0.5, centerY: 0, zoom: 1, description: "Klasyczny widok" },
-    elephant: { centerX: -0.7269, centerY: 0.1889, zoom: 100, description: "Dolina słoni" },
-    seahorse: { centerX: -0.7463, centerY: 0.1102, zoom: 1000, description: "Konik morski" },
-    lightning: { centerX: -1.25066, centerY: 0.02012, zoom: 2000, description: "Błyskawice" },
-    spiral: { centerX: -0.8, centerY: 0.156, zoom: 500, description: "Spirala" }
-};
-
-// Palety kolorów
-function interpolateColor(color1, color2, factor) {
-    const r = Math.round(color1[0] + (color2[0] - color1[0]) * factor);
-    const g = Math.round(color1[1] + (color2[1] - color1[1]) * factor);
-    const b = Math.round(color1[2] + (color2[2] - color1[2]) * factor);
-    return [r, g, b];
-}
-
-function generatePalette(controlPoints, size = 256) {
-    const palette = [];
-    const segments = controlPoints.length - 1;
-    
-    for (let i = 0; i < size; i++) {
-        const position = (i / (size - 1)) * segments;
-        const segmentIndex = Math.floor(position);
-        const segmentPosition = position - segmentIndex;
-        
-        if (segmentIndex >= segments) {
-            palette.push(controlPoints[controlPoints.length - 1]);
-        } else {
-            const color = interpolateColor(
-                controlPoints[segmentIndex],
-                controlPoints[segmentIndex + 1],
-                segmentPosition
-            );
-            palette.push(color);
-        }
-    }
-    
-    return palette;
-}
-
-const colorPalettes = {
-    rainbow: generatePalette([
-        [66, 30, 15], [25, 7, 26], [9, 1, 47], [4, 4, 73], [0, 7, 100],
-        [12, 44, 138], [24, 82, 177], [57, 125, 209], [134, 181, 229],
-        [211, 236, 248], [241, 233, 191], [248, 201, 95], [255, 170, 0],
-        [204, 128, 0], [153, 87, 0], [106, 52, 3]
-    ]),
-    fire: generatePalette([
-        [0, 0, 0], [32, 0, 0], [64, 0, 0], [96, 32, 0], [128, 64, 0],
-        [160, 96, 32], [192, 128, 64], [255, 192, 128], [255, 255, 192], [255, 255, 255]
-    ]),
-    blue: generatePalette([
-        [0, 0, 0], [0, 0, 64], [0, 0, 128], [0, 64, 192], [0, 128, 255],
-        [64, 192, 255], [128, 224, 255], [192, 240, 255], [255, 255, 255]
-    ]),
-    grayscale: generatePalette([
-        [0, 0, 0], [64, 64, 64], [128, 128, 128], [192, 192, 192], [255, 255, 255]
-    ]),
-    purple: generatePalette([
-        [0, 0, 0], [32, 0, 32], [64, 0, 64], [96, 32, 96], [128, 64, 128],
-        [160, 96, 160], [192, 128, 192], [224, 160, 224], [255, 192, 255], [255, 255, 255]
-    ]),
-    sunset: generatePalette([
-        [25, 25, 112], [70, 130, 180], [135, 206, 235], [255, 165, 0],
-        [255, 69, 0], [220, 20, 60], [139, 0, 139], [75, 0, 130]
-    ])
-};
-
-function getColor(iterations, maxIterations, paletteType = 'rainbow') {
-    if (iterations >= maxIterations) {
-        return [0, 0, 0];
-    }
-    
-    const palette = colorPalettes[paletteType] || colorPalettes.rainbow;
-    const index = Math.floor((iterations / maxIterations) * (palette.length - 1));
-    return palette[index];
-}
-
-// Algorytm Mandelbrota
-function mandelbrotIteration(cx, cy, maxIterations, escapeRadius = 2) {
-    let x = 0;
-    let y = 0;
-    let iteration = 0;
-    
-    const escapeRadiusSquared = escapeRadius * escapeRadius;
-    
-    while (iteration < maxIterations && (x * x + y * y) < escapeRadiusSquared) {
-        const xTemp = x * x - y * y + cx;
-        y = 2 * x * y + cy;
-        x = xTemp;
-        iteration++;
-    }
-    
-    return iteration;
-}
-
-function calculateBounds(config) {
-    const aspectRatio = config.width / config.height;
-    const range = 4 / config.zoom;
-    
-    const realRange = range * aspectRatio;
-    const imaginaryRange = range;
-    
-    return {
-        minReal: config.centerX - realRange / 2,
-        maxReal: config.centerX + realRange / 2,
-        minImaginary: config.centerY - imaginaryRange / 2,
-        maxImaginary: config.centerY + imaginaryRange / 2
-    };
-}
+// Import konfiguracji i funkcji z skompilowanych modułów TypeScript
+import { defaultConfig, interestingPoints, calculateBounds } from '../dist/config.js';
+import { getColor } from '../dist/colors.js';
+import { mandelbrotIteration, generateMandelbrotData } from '../dist/mandelbrot.js';
 
 // Klasa główna aplikacji
 class MandelbrotApp {
@@ -272,8 +151,8 @@ class MandelbrotApp {
     }
     
     async generateMandelbrot() {
-        const { width, height, maxIterations, escapeRadius, colorPalette } = this.config;
         const bounds = calculateBounds(this.config);
+        const { width, height, maxIterations, escapeRadius, colorPalette } = this.config;
         
         const imageData = this.ctx.createImageData(width, height);
         const data = imageData.data;
@@ -294,6 +173,7 @@ class MandelbrotApp {
             for (let px = 0; px < width; px++) {
                 const cx = bounds.minReal + px * realStep;
                 
+                // Użyj funkcji z modułu TypeScript
                 const iterations = mandelbrotIteration(cx, cy, maxIterations, escapeRadius);
                 const [r, g, b] = getColor(iterations, maxIterations, colorPalette);
                 

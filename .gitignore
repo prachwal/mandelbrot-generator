@@ -1,6 +1,7 @@
 # Pliki wygenerowane
 output/
 dist/
+dist-web/
 coverage/
 
 # Zależności

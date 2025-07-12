@@ -1,10 +1,25 @@
-// Algorytm generowania fraktala Mandelbrota
+/**
+ * Mandelbrot fractal generation algorithms
+ */
 
 import { getColor } from './colors.js';
 import { calculateBounds } from './config.js';
+import type { MandelbrotConfig, BoundaryPoint } from './types.js';
 
-// Sprawdza czy punkt należy do zbioru Mandelbrota
-export function mandelbrotIteration(cx, cy, maxIterations, escapeRadius = 2) {
+/**
+ * Check if a point belongs to the Mandelbrot set
+ * @param cx - Real part of complex number
+ * @param cy - Imaginary part of complex number  
+ * @param maxIterations - Maximum number of iterations
+ * @param escapeRadius - Escape radius threshold
+ * @returns Number of iterations before escape
+ */
+export function mandelbrotIteration(
+    cx: number, 
+    cy: number, 
+    maxIterations: number, 
+    escapeRadius: number = 2
+): number {
     let x = 0;
     let y = 0;
     let iteration = 0;
@@ -21,14 +36,18 @@ export function mandelbrotIteration(cx, cy, maxIterations, escapeRadius = 2) {
     return iteration;
 }
 
-// Generuje dane obrazu fraktala Mandelbrota
-export function generateMandelbrotData(config) {
+/**
+ * Generate image data for Mandelbrot fractal
+ * @param config - Fractal generation configuration
+ * @returns RGBA image data array
+ */
+export function generateMandelbrotData(config: MandelbrotConfig): Uint8ClampedArray {
     const bounds = calculateBounds(config);
     const { width, height, maxIterations, escapeRadius, colorPalette } = config;
     
-    console.log(`Generowanie fraktala Mandelbrota ${width}x${height}...`);
-    console.log(`Zakres: [${bounds.minReal.toFixed(6)}, ${bounds.maxReal.toFixed(6)}] x [${bounds.minImaginary.toFixed(6)}, ${bounds.maxImaginary.toFixed(6)}]`);
-    console.log(`Maksymalne iteracje: ${maxIterations}`);
+    console.log(`Generating Mandelbrot fractal ${width}x${height}...`);
+    console.log(`Range: [${bounds.minReal.toFixed(6)}, ${bounds.maxReal.toFixed(6)}] x [${bounds.minImaginary.toFixed(6)}, ${bounds.maxImaginary.toFixed(6)}]`);
+    console.log(`Maximum iterations: ${maxIterations}`);
     
     const imageData = new Uint8ClampedArray(width * height * 4); // RGBA
     
@@ -56,25 +75,33 @@ export function generateMandelbrotData(config) {
             pixelIndex += 4;
             progressCounter++;
             
-            // Wyświetl postęp co 10%
+            // Show progress every 10%
             if (progressCounter % Math.floor(totalPixels / 10) === 0) {
                 const progress = Math.floor((progressCounter / totalPixels) * 100);
-                console.log(`Postęp: ${progress}%`);
+                console.log(`Progress: ${progress}%`);
             }
         }
     }
     
-    console.log('Generowanie zakończone!');
+    console.log('Generation completed!');
     return imageData;
 }
 
-// Wersja zoptymalizowana z wielowątkowością (dla Node.js)
-export function generateMandelbrotDataOptimized(config, workerCount = 4) {
+/**
+ * Generate Mandelbrot fractal data with multi-threading simulation
+ * @param config - Fractal generation configuration
+ * @param workerCount - Number of workers to simulate
+ * @returns Promise resolving to RGBA image data array
+ */
+export function generateMandelbrotDataOptimized(
+    config: MandelbrotConfig, 
+    workerCount: number = 4
+): Promise<Uint8ClampedArray> {
     return new Promise((resolve) => {
         const bounds = calculateBounds(config);
         const { width, height, maxIterations, escapeRadius, colorPalette } = config;
         
-        console.log(`Generowanie fraktala Mandelbrota ${width}x${height} z ${workerCount} wątkami...`);
+        console.log(`Generating Mandelbrot fractal ${width}x${height} with ${workerCount} threads...`);
         
         const imageData = new Uint8ClampedArray(width * height * 4);
         const rowsPerWorker = Math.ceil(height / workerCount);
@@ -84,7 +111,7 @@ export function generateMandelbrotDataOptimized(config, workerCount = 4) {
             const startRow = w * rowsPerWorker;
             const endRow = Math.min((w + 1) * rowsPerWorker, height);
             
-            // Symulacja worker'a (w prawdziwej implementacji użyłbyś worker_threads)
+            // Simulate worker (in real implementation you would use worker_threads)
             setTimeout(() => {
                 const realStep = (bounds.maxReal - bounds.minReal) / width;
                 const imaginaryStep = (bounds.maxImaginary - bounds.minImaginary) / height;
@@ -106,10 +133,10 @@ export function generateMandelbrotDataOptimized(config, workerCount = 4) {
                 }
                 
                 completedWorkers++;
-                console.log(`Worker ${w + 1}/${workerCount} zakończony (wiersze ${startRow}-${endRow - 1})`);
+                console.log(`Worker ${w + 1}/${workerCount} completed (rows ${startRow}-${endRow - 1})`);
                 
                 if (completedWorkers === workerCount) {
-                    console.log('Wszystkie worker\'y zakończone!');
+                    console.log('All workers completed!');
                     resolve(imageData);
                 }
             }, 0);
@@ -117,15 +144,26 @@ export function generateMandelbrotDataOptimized(config, workerCount = 4) {
     });
 }
 
-// Funkcja do sprawdzenia czy punkt jest w zbiorze (szybka wersja)
-export function isInMandelbrotSet(cx, cy, maxIterations = 100) {
+/**
+ * Check if a point is in the Mandelbrot set (quick version)
+ * @param cx - Real part of complex number
+ * @param cy - Imaginary part of complex number
+ * @param maxIterations - Maximum number of iterations
+ * @returns True if point is in the set
+ */
+export function isInMandelbrotSet(cx: number, cy: number, maxIterations: number = 100): boolean {
     return mandelbrotIteration(cx, cy, maxIterations) >= maxIterations;
 }
 
-// Funkcja do obliczenia przybliżonej granicy zbioru
-export function calculateSetBoundary(config, samples = 1000) {
+/**
+ * Calculate approximate boundary of the Mandelbrot set
+ * @param config - Fractal generation configuration
+ * @param samples - Number of sample points to check
+ * @returns Array of boundary points
+ */
+export function calculateSetBoundary(config: MandelbrotConfig, samples: number = 1000): BoundaryPoint[] {
     const bounds = calculateBounds(config);
-    const boundaryPoints = [];
+    const boundaryPoints: BoundaryPoint[] = [];
     
     const realStep = (bounds.maxReal - bounds.minReal) / samples;
     const imaginaryStep = (bounds.maxImaginary - bounds.minImaginary) / samples;
@@ -137,7 +175,7 @@ export function calculateSetBoundary(config, samples = 1000) {
             
             const iterations = mandelbrotIteration(cx, cy, config.maxIterations);
             
-            // Punkt na granicy jeśli iteracje są między 50% a 100% maksimum
+            // Point on boundary if iterations are between 50% and 100% of maximum
             if (iterations > config.maxIterations * 0.5 && iterations < config.maxIterations) {
                 boundaryPoints.push({ x: cx, y: cy, iterations });
             }

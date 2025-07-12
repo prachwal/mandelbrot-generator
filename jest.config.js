@@ -1,14 +1,28 @@
 export default {
+  preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'node',
-  transform: {},
+  extensionsToTreatAsEsm: ['.ts'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
+  transform: {
+    '^.+\\.ts$': ['ts-jest', {
+      useESM: true,
+      tsconfig: {
+        module: 'ESNext',
+        target: 'ES2020'
+      }
+    }]
+  },
   testMatch: [
-    '**/tests/**/*.test.js',
-    '**/test/**/*.test.js',
-    '**/__tests__/**/*.test.js'
+    '**/tests/**/*.test.ts',
+    '**/test/**/*.test.ts',
+    '**/__tests__/**/*.test.ts'
   ],
   collectCoverageFrom: [
-    'src/**/*.js',
-    '!src/index.js'
+    'src/**/*.ts',
+    '!src/index.ts',
+    '!src/types.ts'
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov', 'html'],
