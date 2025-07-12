@@ -3,6 +3,10 @@ output/
 dist/
 dist-web/
 coverage/
+docs/
+
+# Dokumentacja jest teraz w web/docs/ i powinna być commitowana
+!web/docs/
 
 # Zależności
 node_modules/

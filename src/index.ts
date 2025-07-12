@@ -1,7 +1,44 @@
 #!/usr/bin/env node
 
 /**
- * Main entry point for Mandelbrot fractal generator (Node.js version)
+ * @fileoverview Command-line interface and Node.js entry point for Mandelbrot fractal generator
+ * @module index
+ * @version 1.0.0
+ * @author Prachwal
+ * @since 1.0.0
+ * 
+ * This module provides a complete command-line interface for generating Mandelbrot fractals
+ * as SVG files. It supports various output formats, interesting point navigation,
+ * and batch generation capabilities for Node.js environments.
+ * 
+ * @example
+ * ```bash
+ * # Generate default fractal
+ * npx mandelbrot-generator
+ * 
+ * # Generate with custom parameters
+ * npx mandelbrot-generator --width 1920 --height 1080 --iterations 256
+ * 
+ * # Generate interesting locations
+ * npx mandelbrot-generator --preset elephant --output elephant.svg
+ * ```
+ * 
+ * @example
+ * ```typescript
+ * // Use programmatically
+ * import { generateMandelbrotSVG, main } from './index.js';
+ * 
+ * // Generate SVG string
+ * const svg = generateMandelbrotSVG({
+ *   width: 800,
+ *   height: 600,
+ *   maxIterations: 100,
+ *   colorPalette: 'fire'
+ * });
+ * 
+ * // Run CLI with custom args
+ * await main(['--preset', 'seahorse', '--output', 'test.svg']);
+ * ```
  */
 
 import { writeFileSync, mkdirSync } from 'fs';

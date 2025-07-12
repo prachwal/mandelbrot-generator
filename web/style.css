@@ -35,6 +35,36 @@ header p {
     opacity: 0.9;
 }
 
+.header-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.doc-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.doc-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 .main-content {
     display: grid;
     grid-template-columns: 350px 1fr;
@@ -332,6 +362,17 @@ header p {
         margin-left: 0;
         max-width: none;
     }
+    
+    .header-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .doc-link {
+        width: 200px;
+        justify-content: center;
+    }
 }
 
 /* Tooltip */
@@ -353,4 +394,50 @@ header p {
     font-size: 12px;
     white-space: nowrap;
     z-index: 1000;
+}
+
+/* Sekcja pomocy i dokumentacji */
+.help-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.help-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    color: #495057;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    gap: 8px;
+}
+
+.help-link:hover {
+    background: #e9ecef;
+    border-color: #2a5298;
+    color: #2a5298;
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(42, 82, 152, 0.1);
+}
+
+.help-link:active {
+    transform: translateX(3px);
+}
+
+/* Responsywność dla sekcji pomocy */
+@media (max-width: 768px) {
+    .help-links {
+        gap: 6px;
+    }
+    
+    .help-link {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
 }
