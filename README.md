@@ -37,6 +37,21 @@ npm run serve
 
 Następnie otwórz http://localhost:8080 w przeglądarce.
 
+### Testy
+
+```bash
+# Uruchom wszystkie testy
+npm test
+
+# Uruchom testy z pokryciem kodu
+npm run test:coverage
+
+# Wygeneruj raport HTML pokrycia
+npm run test:coverage-report
+```
+
+Projekt ma **100% pokrycie kodu** dla głównego modułu `mandelbrot.js`.
+
 ## Konfiguracja
 
 Możesz dostosować parametry generowania w `src/config.js`:

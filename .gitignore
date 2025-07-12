@@ -1,6 +1,7 @@
 # Pliki wygenerowane
 output/
 dist/
+coverage/
 
 # Zależności
 node_modules/

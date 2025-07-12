@@ -11,7 +11,10 @@
     "clean": "rm -rf dist",
     "serve": "cd web && python3 -m http.server 8080",
     "examples": "node examples.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "c8 jest",
+    "test:coverage-report": "c8 --reporter=html --reporter=text jest"
   },
   "keywords": [
     "mandelbrot",
@@ -25,7 +28,10 @@
   "license": "MIT",
   "dependencies": {
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "c8": "^8.0.1"
+  },
   "engines": {
     "node": ">=14.0.0"
   }
