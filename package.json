@@ -1,0 +1,32 @@
+{
+  "name": "mandelbrot-generator",
+  "version": "1.0.0",
+  "description": "Generator fraktala Mandelbrota z wizualizacją na canvas",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "build": "npm run clean && node build.js",
+    "clean": "rm -rf dist",
+    "serve": "cd web && python3 -m http.server 8080",
+    "examples": "node examples.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mandelbrot",
+    "fractal",
+    "generator",
+    "visualization",
+    "canvas",
+    "mathematics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
