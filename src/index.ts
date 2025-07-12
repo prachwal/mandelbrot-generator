@@ -45,38 +45,41 @@ import { writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { mandelbrotIteration } from './mandelbrot.js';
-import { defaultConfig, interestingPoints } from './config.js';
+import { defaultConfig, interestingPoints, calculateBounds } from './config.js';
 import { getColor } from './colors.js';
-import type { MandelbrotConfig, FractalBounds } from './types.js';
+import type { MandelbrotConfig } from './types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = dirname(__dirname);
 
 /**
- * Calculate bounds for fractal rendering
+ * Saves a Mandelbrot fractal as an SVG file to the output directory
+ * 
+ * This function generates the fractal and writes it directly to a file in the
+ * project's output folder. It automatically creates the output directory if needed.
+ * 
+ * @param config - Complete fractal generation configuration
+ * @param filename - Name of the output file (will be converted to .svg)
+ * @returns Absolute path to the saved SVG file
+ * 
+ * @example
+ * ```typescript
+ * import { saveImageAsSVG, defaultConfig } from '@prachwal/mandelbrot-generator';
+ * 
+ * const filePath = saveImageAsSVG({
+ *   ...defaultConfig,
+ *   width: 1200,
+ *   height: 800,
+ *   maxIterations: 256
+ * }, 'my-fractal.svg');
+ * 
+ * console.log(`Fractal saved to: ${filePath}`);
+ * ```
+ * 
+ * @see {@link generateMandelbrotSVG} for generating SVG content without saving
+ * @since 1.0.0
  */
-function calculateBounds(config: MandelbrotConfig): FractalBounds {
-    const aspectRatio = config.width / config.height;
-    const range = 4 / config.zoom;
-    
-    const realRange = range * aspectRatio;
-    const imaginaryRange = range;
-    
-    return {
-        minReal: config.centerX - realRange / 2,
-        maxReal: config.centerX + realRange / 2,
-        minImaginary: config.centerY - imaginaryRange / 2,
-        maxImaginary: config.centerY + imaginaryRange / 2
-    };
-}
-
-/**
- * Save fractal as SVG file
- * @param config - Fractal configuration
- * @param filename - Output filename
- * @returns Path to saved file
- */
-function saveImageAsSVG(config: MandelbrotConfig, filename: string): string {
+export function saveImageAsSVG(config: MandelbrotConfig, filename: string): string {
     const { width, height } = config;
     
     console.log(`Generating SVG ${width}x${height}...`);
@@ -94,11 +97,55 @@ function saveImageAsSVG(config: MandelbrotConfig, filename: string): string {
 }
 
 /**
- * Generate SVG content for Mandelbrot fractal
- * @param config - Fractal configuration
- * @returns SVG string
+ * Generates SVG content for a Mandelbrot fractal
+ * 
+ * This function creates a complete SVG document as a string, containing
+ * the visual representation of the Mandelbrot set. The SVG can be saved
+ * to a file, embedded in HTML, or processed further.
+ * 
+ * @param config - Complete fractal generation configuration
+ * @returns Complete SVG document as a string
+ * 
+ * @example
+ * ```typescript
+ * import { generateMandelbrotSVG, interestingPoints } from '@prachwal/mandelbrot-generator';
+ * 
+ * // Generate classic view
+ * const svg = generateMandelbrotSVG({
+ *   width: 800,
+ *   height: 600,
+ *   maxIterations: 100,
+ *   escapeRadius: 2,
+ *   zoom: 1,
+ *   centerX: -0.5,
+ *   centerY: 0,
+ *   colorPalette: 'rainbow'
+ * });
+ * 
+ * // Use with predefined locations
+ * const elephantSvg = generateMandelbrotSVG({
+ *   width: 1200,
+ *   height: 800,
+ *   maxIterations: 256,
+ *   escapeRadius: 2,
+ *   colorPalette: 'fire',
+ *   ...interestingPoints.elephant
+ * });
+ * 
+ * // Save to file or use directly
+ * document.getElementById('fractal').innerHTML = svg;
+ * ```
+ * 
+ * @performance
+ * - Uses 2x2 pixel rectangles for better SVG performance
+ * - Skips black pixels (points in the Mandelbrot set) to reduce file size
+ * - Progress reporting every 10% during generation
+ * 
+ * @see {@link saveImageAsSVG} for direct file saving
+ * @see {@link generateMandelbrotData} for raw pixel data generation
+ * @since 1.0.0
  */
-function generateMandelbrotSVG(config: MandelbrotConfig): string {
+export function generateMandelbrotSVG(config: MandelbrotConfig): string {
     const { width, height, maxIterations, escapeRadius, colorPalette } = config;
     const bounds = calculateBounds(config);
     
