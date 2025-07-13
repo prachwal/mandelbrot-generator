@@ -1,4 +1,4 @@
-[**@prachwal/mandelbrot-generator v1.0.0**](../README.md)
+[**@prachwal/mandelbrot-generator v1.1.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: InterestingPoints
 
-Defined in: [types.ts:127](https://github.com/prachwal/mandelbrot-generator/blob/774585aef1c1cbc7e412618ceaebc4d9e4774868/src/types.ts#L127)
+Defined in: [types.ts:127](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L127)
 
 Collection of predefined interesting points in the Mandelbrot set
 
@@ -35,7 +35,7 @@ Additional points can be added
 
 > `readonly` **classic**: [`InterestingPoint`](InterestingPoint.md)
 
-Defined in: [types.ts:129](https://github.com/prachwal/mandelbrot-generator/blob/774585aef1c1cbc7e412618ceaebc4d9e4774868/src/types.ts#L129)
+Defined in: [types.ts:129](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L129)
 
 Classic full view of the Mandelbrot set
 
@@ -45,7 +45,7 @@ Classic full view of the Mandelbrot set
 
 > `readonly` **elephant**: [`InterestingPoint`](InterestingPoint.md)
 
-Defined in: [types.ts:131](https://github.com/prachwal/mandelbrot-generator/blob/774585aef1c1cbc7e412618ceaebc4d9e4774868/src/types.ts#L131)
+Defined in: [types.ts:131](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L131)
 
 Elephant Valley detail
 
@@ -55,7 +55,7 @@ Elephant Valley detail
 
 > `readonly` **seahorse**: [`InterestingPoint`](InterestingPoint.md)
 
-Defined in: [types.ts:133](https://github.com/prachwal/mandelbrot-generator/blob/774585aef1c1cbc7e412618ceaebc4d9e4774868/src/types.ts#L133)
+Defined in: [types.ts:133](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L133)
 
 Seahorse Valley detail
 
@@ -65,7 +65,7 @@ Seahorse Valley detail
 
 > `readonly` **lightning**: [`InterestingPoint`](InterestingPoint.md)
 
-Defined in: [types.ts:135](https://github.com/prachwal/mandelbrot-generator/blob/774585aef1c1cbc7e412618ceaebc4d9e4774868/src/types.ts#L135)
+Defined in: [types.ts:135](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L135)
 
 Lightning-like patterns
 
@@ -75,6 +75,6 @@ Lightning-like patterns
 
 > `readonly` **spiral**: [`InterestingPoint`](InterestingPoint.md)
 
-Defined in: [types.ts:137](https://github.com/prachwal/mandelbrot-generator/blob/774585aef1c1cbc7e412618ceaebc4d9e4774868/src/types.ts#L137)
+Defined in: [types.ts:137](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L137)
 
 Spiral structures

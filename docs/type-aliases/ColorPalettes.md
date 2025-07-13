@@ -1,4 +1,4 @@
-[**@prachwal/mandelbrot-generator v1.0.0**](../README.md)
+[**@prachwal/mandelbrot-generator v1.1.0**](../README.md)
 
 ***
 
@@ -8,6 +8,6 @@
 
 > **ColorPalettes** = `{ readonly [K in PaletteType]: readonly RGBColor[] }`
 
-Defined in: [types.ts:164](https://github.com/prachwal/mandelbrot-generator/blob/774585aef1c1cbc7e412618ceaebc4d9e4774868/src/types.ts#L164)
+Defined in: [types.ts:164](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L164)
 
 Color palette collection

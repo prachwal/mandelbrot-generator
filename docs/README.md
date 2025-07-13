@@ -1,4 +1,4 @@
-**@prachwal/mandelbrot-generator v1.0.0**
+**@prachwal/mandelbrot-generator v1.1.0**
 
 ***
 
