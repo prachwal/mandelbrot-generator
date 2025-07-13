@@ -1,3 +1,7 @@
+**@prachwal/mandelbrot-generator v1.0.0**
+
+***
+
 # Mandelbrot Generator
 
 Professional Mandelbrot fractal generator with TypeScript support, interactive web interface, and multiple output formats.
@@ -149,13 +153,13 @@ npm run docs:serve
 ```
 
 Dokumentacja obejmuje:
-- **[📚 API Reference (Markdown)](./docs/API.md)** - Dokumentacja w formacie Markdown
-- **[🌐 API Reference (HTML)](./web/docs/index.html)** - Kompletne API z przykładami  
-- **[📋 Moduły TypeScript](./web/docs/modules.html)** - Szczegóły wszystkich modułów
-- **[🔧 Typy i interfejsy](./docs/interfaces/)** - Definicje typów TypeScript
-- **[⚡ Funkcje](./docs/functions/)** - Szczegółowe opisy funkcji z przykładami
+- **[📚 API Reference (Markdown)](_media/API.md)** - Dokumentacja w formacie Markdown
+- **[🌐 API Reference (HTML)](_media/index.html)** - Kompletne API z przykładami  
+- **[📋 Moduły TypeScript](_media/modules.html)** - Szczegóły wszystkich modułów
+- **[🔧 Typy i interfejsy](_media/interfaces)** - Definicje typów TypeScript
+- **[⚡ Funkcje](_media/functions)** - Szczegółowe opisy funkcji z przykładami
 
-**📖 [Zobacz dokumentację Markdown](./docs/API.md)** | **🌐 [Zobacz dokumentację HTML](./web/docs/index.html)**
+**📖 [Zobacz dokumentację Markdown](_media/API.md)** | **🌐 [Zobacz dokumentację HTML](_media/index.html)**
 
 ### Testy
 
@@ -388,14 +392,14 @@ Ten projekt wykorzystuje nowoczesny stack technologiczny:
 | `PaletteType` | Typ palety kolorów | `types.ts` |
 | `FractalBounds` | Granice płaszczyzny zespolonej | `types.ts` |
 
-**📖 [Pełna dokumentacja API (Markdown)](./docs/API.md)** | **🌐 [Dokumentacja HTML](./web/docs/index.html)**
+**📖 [Pełna dokumentacja API (Markdown)](_media/API.md)** | **🌐 [Dokumentacja HTML](_media/index.html)**
 
 ## 📦 NPM Package
 
 **Zainstaluj:** `npm install @prachwal/mandelbrot-generator`
 
 - 📋 **[NPM Registry](https://www.npmjs.com/package/@prachwal/mandelbrot-generator)** - Oficjalna strona pakietu
-- 📚 **[API Docs (Markdown)](./docs/API.md)** - Dokumentacja w formacie Markdown  
+- 📚 **[API Docs (Markdown)](_media/API.md)** - Dokumentacja w formacie Markdown  
 - 📊 **[Bundle Size](https://bundlephobia.com/package/@prachwal/mandelbrot-generator)** - Analiza rozmiaru pakietu  
 - 🔍 **[Dependencies](https://npm.graph.cool/@prachwal/mandelbrot-generator)** - Graf zależności
 - 📈 **[Downloads](https://npm-stat.com/charts.html?package=@prachwal/mandelbrot-generator)** - Statystyki pobrań
@@ -436,7 +440,7 @@ import type {
 
 ## Licencja
 
-MIT License - Zobacz [LICENSE](./LICENSE) dla szczegółów.
+MIT License - Zobacz [LICENSE](_media/LICENSE) dla szczegółów.
 
 ## Autor
 
@@ -444,4 +448,4 @@ Stworzony przez **Prachwal** - Generator fraktala Mandelbrota w TypeScript.
 
 ---
 
-**[⬆️ Na górę](#mandelbrot-generator)** | **[📖 Dokumentacja](./web/docs/index.html)** | **[🧪 Testy](#testy)** | **[⚙️ Konfiguracja](#konfiguracja)**
+**[⬆️ Na górę](#mandelbrot-generator)** | **[📖 Dokumentacja](_media/index.html)** | **[🧪 Testy](#testy)** | **[⚙️ Konfiguracja](#konfiguracja)**

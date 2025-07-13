@@ -3,9 +3,11 @@ output/
 dist/
 dist-web/
 coverage/
-docs/
+docs-md/
 
-# Dokumentacja jest teraz w web/docs/ i powinna być commitowana
+# Dokumentacja Markdown w docs/ powinna być commitowana
+# Dokumentacja HTML w web/docs/ powinna być commitowana  
+!docs/
 !web/docs/
 
 # Test NPM - folder testowy dla biblioteki z NPM

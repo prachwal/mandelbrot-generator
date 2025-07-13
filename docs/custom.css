@@ -1,0 +1,124 @@
+/* Custom CSS for TypeDoc Documentation */
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-light: #3b82f6;
+  --color-accent: #7c3aed;
+  --color-text: #1f2937;
+  --color-text-aside: #6b7280;
+  --color-link: #2563eb;
+  --color-link-hover: #1d4ed8;
+}
+
+/* Header styling */
+.tsd-page-title {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: white;
+  padding: 2rem;
+  margin: -2rem -2rem 2rem -2rem;
+  border-radius: 0 0 12px 12px;
+}
+
+.tsd-page-title h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Module badges */
+.tsd-signature-symbol {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Code blocks */
+pre code {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Links */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* Navigation */
+.tsd-navigation a {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.tsd-navigation a:hover {
+  background-color: #f3f4f6;
+}
+
+/* Example boxes */
+.tsd-comment .example {
+  background: #f0f9ff;
+  border-left: 4px solid var(--color-primary);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Performance notes */
+.tsd-comment .performance {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Algorithm descriptions */
+.tsd-comment .algorithm {
+  background: #f3f4f6;
+  border-left: 4px solid #6b7280;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Complexity notes */
+.tsd-comment .complexity {
+  background: #ecfdf5;
+  border-left: 4px solid #10b981;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Mathematics sections */
+.tsd-comment .mathematics {
+  background: #faf5ff;
+  border-left: 4px solid var(--color-accent);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tsd-page-title {
+    margin: -1rem -1rem 1rem -1rem;
+    padding: 1.5rem;
+  }
+  
+  .tsd-page-title h1 {
+    font-size: 2rem;
+  }
+}
