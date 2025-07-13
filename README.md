@@ -1,14 +1,36 @@
 # Mandelbrot Generator
 
-Generator fraktala Mandelbrota z wizualizacją na canvas w Node.js i przeglądarce.
+Professional Mandelbrot fractal generator with TypeScript support, interactive web interface, and multiple output formats.
 
+[![NPM Version](https://img.shields.io/npm/v/@prachwal/mandelbrot-generator)](https://www.npmjs.com/package/@prachwal/mandelbrot-generator)
+[![NPM Downloads](https://img.shields.io/npm/dm/@prachwal/mandelbrot-generator)](https://www.npmjs.com/package/@prachwal/mandelbrot-generator)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2.2-blue)](https://www.typescriptlang.org/)
 [![Jest](https://img.shields.io/badge/Jest-29.7.0-green)](https://jestjs.io/)
 [![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)](#testy)
 [![Documentation](https://img.shields.io/badge/Docs-TypeDoc-blue)](./web/docs/index.html)
 [![Vite](https://img.shields.io/badge/Vite-7.0.4-646CFF)](https://vitejs.dev/)
 
-## Funkcje
+## 📦 Instalacja
+
+### Jako pakiet NPM (zalecane)
+
+```bash
+# Instaluj pakiet globalnie
+npm install -g @prachwal/mandelbrot-generator
+
+# Lub dodaj do swojego projektu
+npm install @prachwal/mandelbrot-generator
+```
+
+### Lokalne uruchomienie
+
+```bash
+git clone https://github.com/prachwal/mandelbrot-generator.git
+cd mandelbrot-generator
+npm install
+```
+
+## ✨ Funkcje
 
 - 🎨 Renderowanie fraktala Mandelbrota na canvas
 - 🔍 Konfigurowalne parametry (rozdzielczość, zakres, iteracje)
@@ -18,16 +40,82 @@ Generator fraktala Mandelbrota z wizualizacją na canvas w Node.js i przeglądar
 - ⚡ Optymalizowane obliczenia
 - 📚 Pełna dokumentacja TypeScript z JSDoc
 - 🏗️ Nowoczesny stack: TypeScript + Vite + Jest
+- 📦 **Dostępny jako pakiet NPM**
+- 🔧 **Kompletne TypeScript API**
 
-## Instalacja
+## 🚀 Szybki start
+
+### Użyj jako pakiet NPM
 
 ```bash
-npm install
+# Zainstaluj pakiet
+npm install @prachwal/mandelbrot-generator
+
+# Użyj w swoim projekcie
+import { generateMandelbrotSVG, defaultConfig } from '@prachwal/mandelbrot-generator';
+
+const svg = generateMandelbrotSVG({
+  ...defaultConfig,
+  width: 800,
+  height: 600,
+  colorPalette: 'fire'
+});
+
+console.log('Generated SVG:', svg.length, 'characters');
 ```
 
-## Użycie
+### CLI (po instalacji globalnej)
 
-### Node.js (generowanie SVG)
+```bash
+# Instaluj globalnie
+npm install -g @prachwal/mandelbrot-generator
+
+# Generuj fractal
+mandelbrot-generator --width 1920 --height 1080 --iterations 256
+```
+
+## 💻 Użycie
+
+### NPM Package API
+
+```typescript
+import { 
+  generateMandelbrotSVG, 
+  saveImageAsSVG,
+  defaultConfig,
+  interestingPoints,
+  type MandelbrotConfig 
+} from '@prachwal/mandelbrot-generator';
+
+// Szybkie generowanie
+const svg = generateMandelbrotSVG(defaultConfig);
+
+// Z customową konfiguracją
+const config: MandelbrotConfig = {
+  width: 1200,
+  height: 800,
+  maxIterations: 256,
+  centerX: -0.7269,
+  centerY: 0.1889,
+  zoom: 100,
+  colorPalette: 'fire'
+};
+
+const customSvg = generateMandelbrotSVG(config);
+
+// Zapisz do pliku
+const outputPath = saveImageAsSVG(config, 'my-fractal.svg');
+console.log(`Saved to: ${outputPath}`);
+
+// Użyj predefiniowanych lokacji
+const elephantSvg = generateMandelbrotSVG({
+  ...defaultConfig,
+  ...interestingPoints.elephant,
+  maxIterations: 512
+});
+```
+
+### Node.js CLI (lokalne uruchomienie)
 
 ```bash
 npm start
@@ -37,7 +125,7 @@ Wygeneruje plik `mandelbrot.svg` w folderze `output/`.
 
 **Uwaga:** Wersja Node.js generuje pliki SVG zamiast PNG aby uniknąć problemów z zależnościami systemowymi. SVG oferuje skalowalne grafiki wektorowe idealnie nadające się do wizualizacji fraktali.
 
-### Przeglądarka
+### Web Interface (lokalne uruchomienie)
 
 ```bash
 npm run serve
@@ -229,7 +317,28 @@ npm run docs:watch         # Dokumentacja z obserwowaniem
 # Inne
 npm run clean              # Wyczyść wszystkie pliki build
 npm run examples           # Uruchom przykłady
+npm run publish:npm        # 🚀 Opublikuj do NPM (jedno polecenie!)
 ```
+
+### 🚀 Publikacja do NPM
+
+**Jedno polecenie do publikacji:**
+
+```bash
+npm run publish:npm
+```
+
+To polecenie automatycznie:
+1. ✅ Czyści poprzednie buildy (`npm run clean`)
+2. ✅ Kompiluje TypeScript (`npm run build`) 
+3. ✅ Uruchamia wszystkie testy (`npm test`)
+4. ✅ Generuje dokumentację (`npm run docs`)
+5. ✅ Publikuje pakiet (`npm publish --access public`)
+
+**Wymagania przed publikacją:**
+- Zalogowany do NPM: `npm login`
+- Uprawnienia do @prachwal scope
+- Wersja w `package.json` zaktualizowana
 
 ## Technologie
 
@@ -276,6 +385,49 @@ Ten projekt wykorzystuje nowoczesny stack technologiczny:
 | `FractalBounds` | Granice płaszczyzny zespolonej | `types.ts` |
 
 **📖 [Pełna dokumentacja API](./web/docs/index.html)**
+
+## 📦 NPM Package
+
+**Zainstaluj:** `npm install @prachwal/mandelbrot-generator`
+
+- 📋 **[NPM Registry](https://www.npmjs.com/package/@prachwal/mandelbrot-generator)** - Oficjalna strona pakietu
+- 📊 **[Bundle Size](https://bundlephobia.com/package/@prachwal/mandelbrot-generator)** - Analiza rozmiaru pakietu  
+- 🔍 **[Dependencies](https://npm.graph.cool/@prachwal/mandelbrot-generator)** - Graf zależności
+- 📈 **[Downloads](https://npm-stat.com/charts.html?package=@prachwal/mandelbrot-generator)** - Statystyki pobrań
+
+### Dostępne eksporty
+
+```typescript
+// Główne funkcje generowania
+import { 
+  generateMandelbrotSVG,     // Generuj SVG jako string
+  saveImageAsSVG,            // Zapisz SVG do pliku
+  generateMandelbrotData,    // Generuj raw data
+  mandelbrotIteration        // Oblicz iteracje dla punktu
+} from '@prachwal/mandelbrot-generator';
+
+// Konfiguracja i kolory  
+import { 
+  defaultConfig,             // Domyślna konfiguracja
+  interestingPoints,         // Predefiniowane lokacje
+  colorPalettes,             // Dostępne palety
+  calculateBounds            // Oblicz granice płaszczyzny
+} from '@prachwal/mandelbrot-generator';
+
+// Funkcje kolorów
+import { 
+  getColor,                  // RGB dla iteracji
+  rgbToHex,                  // RGB → Hex
+  getColorHex                // Hex dla iteracji
+} from '@prachwal/mandelbrot-generator';
+
+// Typy TypeScript
+import type { 
+  MandelbrotConfig,          // Konfiguracja
+  PaletteType,               // Typ palety  
+  RGBColor                   // Kolor RGB
+} from '@prachwal/mandelbrot-generator';
+```
 
 ## Licencja
 

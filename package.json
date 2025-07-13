@@ -31,6 +31,7 @@
     "docs:serve": "npm run docs && cd web/docs && python3 -m http.server 8081",
     "docs:watch": "typedoc --watch",
     "docs:json": "typedoc --json web/docs/api.json",
+    "publish:npm": "npm run clean && npm run build && npm test && npm run docs && npm publish --access public",
     "prepublishOnly": "npm run clean && npm run build && npm test && npm run docs",
     "prepare": "npm run build",
     "postpack": "npm run clean"
