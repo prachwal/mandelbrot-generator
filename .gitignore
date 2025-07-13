@@ -8,6 +8,9 @@ docs/
 # Dokumentacja jest teraz w web/docs/ i powinna być commitowana
 !web/docs/
 
+# Test NPM - folder testowy dla biblioteki z NPM
+test_npm/
+
 # Zależności
 node_modules/
 npm-debug.log*
