@@ -6,7 +6,7 @@
 
 # Interface: InterestingPoint
 
-Defined in: [types.ts:105](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L105)
+Defined in: [types.ts:105](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L105)
 
 A point of interest in the Mandelbrot set with description
 
@@ -31,7 +31,7 @@ const elephantValley: InterestingPoint = {
 
 > `readonly` **centerX**: `number`
 
-Defined in: [types.ts:107](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L107)
+Defined in: [types.ts:107](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L107)
 
 Real part of the center coordinate
 
@@ -41,7 +41,7 @@ Real part of the center coordinate
 
 > `readonly` **centerY**: `number`
 
-Defined in: [types.ts:109](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L109)
+Defined in: [types.ts:109](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L109)
 
 Imaginary part of the center coordinate
 
@@ -51,7 +51,7 @@ Imaginary part of the center coordinate
 
 > `readonly` **zoom**: `number`
 
-Defined in: [types.ts:111](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L111)
+Defined in: [types.ts:111](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L111)
 
 Recommended zoom level for optimal viewing
 
@@ -61,6 +61,6 @@ Recommended zoom level for optimal viewing
 
 > `readonly` **description**: `string`
 
-Defined in: [types.ts:113](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/types.ts#L113)
+Defined in: [types.ts:113](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L113)
 
 Human-readable description of this location

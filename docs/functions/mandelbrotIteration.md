@@ -8,7 +8,7 @@
 
 > **mandelbrotIteration**(`cx`, `cy`, `maxIterations`, `escapeRadius`): `number`
 
-Defined in: [mandelbrot.ts:61](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/mandelbrot.ts#L61)
+Defined in: [mandelbrot.ts:61](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/mandelbrot.ts#L61)
 
 Computes the number of iterations for a point in the complex plane to escape the Mandelbrot set
 

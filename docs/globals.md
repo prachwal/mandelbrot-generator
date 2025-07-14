@@ -53,6 +53,14 @@ const svg = generateMandelbrotSVG({
 await main(['--preset', 'seahorse', '--output', 'test.svg']);
 ```
 
+## Classes
+
+- [BurningShipFractal](classes/BurningShipFractal.md)
+- [JuliaFractal](classes/JuliaFractal.md)
+- [MandelbrotFractal](classes/MandelbrotFractal.md)
+- [BaseFractal](classes/BaseFractal.md)
+- [FractalEngine](classes/FractalEngine.md)
+
 ## Interfaces
 
 - [MandelbrotConfig](interfaces/MandelbrotConfig.md)
@@ -72,6 +80,7 @@ await main(['--preset', 'seahorse', '--output', 'test.svg']);
 - [colorPalettes](variables/colorPalettes.md)
 - [defaultConfig](variables/defaultConfig.md)
 - [interestingPoints](variables/interestingPoints.md)
+- [fractalEngine](variables/fractalEngine.md)
 
 ## Functions
 

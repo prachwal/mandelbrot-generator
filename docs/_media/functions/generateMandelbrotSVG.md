@@ -8,7 +8,7 @@
 
 > **generateMandelbrotSVG**(`config`): `string`
 
-Defined in: [index.ts:148](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/index.ts#L148)
+Defined in: [index.ts:148](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/index.ts#L148)
 
 Generates SVG content for a Mandelbrot fractal
 

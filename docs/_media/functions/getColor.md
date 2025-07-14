@@ -8,7 +8,7 @@
 
 > **getColor**(`iterations`, `maxIterations`, `paletteType`): [`RGBColor`](../type-aliases/RGBColor.md)
 
-Defined in: [colors.ts:288](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/colors.ts#L288)
+Defined in: [colors.ts:288](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/colors.ts#L288)
 
 Maps iteration count to RGB color using the specified palette
 

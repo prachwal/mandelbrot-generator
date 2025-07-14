@@ -8,7 +8,7 @@
 
 > **rgbToHex**(`r`, `g`, `b`): `string`
 
-Defined in: [colors.ts:332](https://github.com/prachwal/mandelbrot-generator/blob/ef8898d44624381552c066d1ffd67c7f15ed1930/src/colors.ts#L332)
+Defined in: [colors.ts:332](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/colors.ts#L332)
 
 Converts RGB color values to hexadecimal color string format
 
