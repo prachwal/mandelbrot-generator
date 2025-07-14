@@ -1,6 +1,6 @@
 {
   "name": "@prachwal/mandelbrot-generator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Professional Mandelbrot fractal generator with TypeScript support, interactive web interface, and multiple output formats",
   "main": "dist/index.js",
   "module": "dist/index.js",

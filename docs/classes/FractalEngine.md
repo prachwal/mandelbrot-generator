@@ -1,4 +1,4 @@
-[**@prachwal/mandelbrot-generator v1.1.0**](../README.md)
+[**@prachwal/mandelbrot-generator v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Class: FractalEngine
 
-Defined in: [core/fractal-engine.ts:13](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/fractal-engine.ts#L13)
+Defined in: [core/fractal-engine.ts:13](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/fractal-engine.ts#L13)
 
 Central registry and manager for all fractal algorithms
 Provides plugin-like architecture for adding new fractals
@@ -27,7 +27,7 @@ Provides plugin-like architecture for adding new fractals
 
 > **register**(`algorithm`): `void`
 
-Defined in: [core/fractal-engine.ts:21](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/fractal-engine.ts#L21)
+Defined in: [core/fractal-engine.ts:21](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/fractal-engine.ts#L21)
 
 Register a new fractal algorithm
 
@@ -49,7 +49,7 @@ Fractal algorithm instance
 
 > **getAlgorithm**(`id`): `undefined` \| [`BaseFractal`](BaseFractal.md)
 
-Defined in: [core/fractal-engine.ts:35](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/fractal-engine.ts#L35)
+Defined in: [core/fractal-engine.ts:35](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/fractal-engine.ts#L35)
 
 Get algorithm by ID
 
@@ -73,7 +73,7 @@ Fractal algorithm instance
 
 > **getDefaultAlgorithm**(): `undefined` \| [`BaseFractal`](BaseFractal.md)
 
-Defined in: [core/fractal-engine.ts:42](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/fractal-engine.ts#L42)
+Defined in: [core/fractal-engine.ts:42](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/fractal-engine.ts#L42)
 
 Get default algorithm
 
@@ -87,7 +87,7 @@ Get default algorithm
 
 > **getAllAlgorithms**(): `FractalInfo`[]
 
-Defined in: [core/fractal-engine.ts:50](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/fractal-engine.ts#L50)
+Defined in: [core/fractal-engine.ts:50](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/fractal-engine.ts#L50)
 
 Get all available algorithms
 
@@ -103,7 +103,7 @@ Array of algorithm metadata
 
 > **generateFractal**(`algorithmId`, `config`): `Uint8ClampedArray`
 
-Defined in: [core/fractal-engine.ts:67](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/fractal-engine.ts#L67)
+Defined in: [core/fractal-engine.ts:67](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/fractal-engine.ts#L67)
 
 Generate fractal data using specified algorithm
 
@@ -133,7 +133,7 @@ Generated image data
 
 > **iteratePoint**(`algorithmId`, `point`, `config`): `FractalResult`
 
-Defined in: [core/fractal-engine.ts:87](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/fractal-engine.ts#L87)
+Defined in: [core/fractal-engine.ts:87](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/fractal-engine.ts#L87)
 
 Get iteration result for single point
 
@@ -167,7 +167,7 @@ Algorithm configuration
 
 > **getMergedConfig**(`algorithmId`, `userConfig`): `FractalConfig`
 
-Defined in: [core/fractal-engine.ts:102](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/fractal-engine.ts#L102)
+Defined in: [core/fractal-engine.ts:102](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/fractal-engine.ts#L102)
 
 Get merged configuration with algorithm defaults
 

@@ -1,4 +1,4 @@
-[**@prachwal/mandelbrot-generator v1.1.0**](../README.md)
+[**@prachwal/mandelbrot-generator v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: MandelbrotConfig
 
-Defined in: [types.ts:47](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L47)
+Defined in: [types.ts:47](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L47)
 
 Configuration for Mandelbrot fractal generation
 
@@ -36,7 +36,7 @@ const config: MandelbrotConfig = {
 
 > `readonly` **width**: `number`
 
-Defined in: [types.ts:49](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L49)
+Defined in: [types.ts:49](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L49)
 
 Image width in pixels
 
@@ -46,7 +46,7 @@ Image width in pixels
 
 > `readonly` **height**: `number`
 
-Defined in: [types.ts:51](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L51)
+Defined in: [types.ts:51](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L51)
 
 Image height in pixels
 
@@ -56,7 +56,7 @@ Image height in pixels
 
 > `readonly` **maxIterations**: `number`
 
-Defined in: [types.ts:53](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L53)
+Defined in: [types.ts:53](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L53)
 
 Maximum number of iterations
 
@@ -66,7 +66,7 @@ Maximum number of iterations
 
 > `readonly` **escapeRadius**: `number`
 
-Defined in: [types.ts:55](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L55)
+Defined in: [types.ts:55](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L55)
 
 Escape radius for iteration
 
@@ -76,7 +76,7 @@ Escape radius for iteration
 
 > `readonly` **zoom**: `number`
 
-Defined in: [types.ts:57](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L57)
+Defined in: [types.ts:57](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L57)
 
 Zoom level
 
@@ -86,7 +86,7 @@ Zoom level
 
 > `readonly` **centerX**: `number`
 
-Defined in: [types.ts:59](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L59)
+Defined in: [types.ts:59](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L59)
 
 Center X coordinate
 
@@ -96,7 +96,7 @@ Center X coordinate
 
 > `readonly` **centerY**: `number`
 
-Defined in: [types.ts:61](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L61)
+Defined in: [types.ts:61](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L61)
 
 Center Y coordinate
 
@@ -106,7 +106,7 @@ Center Y coordinate
 
 > `readonly` **colorPalette**: [`PaletteType`](../type-aliases/PaletteType.md)
 
-Defined in: [types.ts:63](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L63)
+Defined in: [types.ts:63](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L63)
 
 Color palette to use
 
@@ -116,6 +116,6 @@ Color palette to use
 
 > `readonly` `optional` **outputFile**: `string`
 
-Defined in: [types.ts:65](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L65)
+Defined in: [types.ts:65](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L65)
 
 Output filename (for Node.js)

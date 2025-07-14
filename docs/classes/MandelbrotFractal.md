@@ -1,4 +1,4 @@
-[**@prachwal/mandelbrot-generator v1.1.0**](../README.md)
+[**@prachwal/mandelbrot-generator v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Class: MandelbrotFractal
 
-Defined in: [algorithms/mandelbrot.ts:14](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/algorithms/mandelbrot.ts#L14)
+Defined in: [algorithms/mandelbrot.ts:14](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/algorithms/mandelbrot.ts#L14)
 
 Classic Mandelbrot fractal implementation
 Formula: z_{n+1} = z_n^2 + c, where z_0 = 0
@@ -39,7 +39,7 @@ Formula: z_{n+1} = z_n^2 + c, where z_0 = 0
 
 > `readonly` **id**: `"mandelbrot"` = `'mandelbrot'`
 
-Defined in: [algorithms/mandelbrot.ts:15](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/algorithms/mandelbrot.ts#L15)
+Defined in: [algorithms/mandelbrot.ts:15](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/algorithms/mandelbrot.ts#L15)
 
 Unique identifier for this fractal type
 
@@ -53,7 +53,7 @@ Unique identifier for this fractal type
 
 > `readonly` **name**: `"Mandelbrot Set"` = `'Mandelbrot Set'`
 
-Defined in: [algorithms/mandelbrot.ts:16](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/algorithms/mandelbrot.ts#L16)
+Defined in: [algorithms/mandelbrot.ts:16](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/algorithms/mandelbrot.ts#L16)
 
 Human-readable name
 
@@ -67,7 +67,7 @@ Human-readable name
 
 > `readonly` **description**: `"Classic Mandelbrot fractal using the iteration z² + c"` = `'Classic Mandelbrot fractal using the iteration z² + c'`
 
-Defined in: [algorithms/mandelbrot.ts:17](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/algorithms/mandelbrot.ts#L17)
+Defined in: [algorithms/mandelbrot.ts:17](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/algorithms/mandelbrot.ts#L17)
 
 Description of the fractal
 
@@ -81,7 +81,7 @@ Description of the fractal
 
 > `readonly` **defaultConfig**: `FractalConfig`
 
-Defined in: [algorithms/mandelbrot.ts:19](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/algorithms/mandelbrot.ts#L19)
+Defined in: [algorithms/mandelbrot.ts:19](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/algorithms/mandelbrot.ts#L19)
 
 Default configuration for this fractal
 
@@ -95,7 +95,7 @@ Default configuration for this fractal
 
 > `readonly` **parameterSchema**: `ParameterSchema`[]
 
-Defined in: [algorithms/mandelbrot.ts:30](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/algorithms/mandelbrot.ts#L30)
+Defined in: [algorithms/mandelbrot.ts:30](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/algorithms/mandelbrot.ts#L30)
 
 Parameter schema for UI generation
 
@@ -109,7 +109,7 @@ Parameter schema for UI generation
 
 > **iterate**(`point`, `config`): `FractalResult`
 
-Defined in: [algorithms/mandelbrot.ts:75](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/algorithms/mandelbrot.ts#L75)
+Defined in: [algorithms/mandelbrot.ts:75](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/algorithms/mandelbrot.ts#L75)
 
 Core Mandelbrot iteration
 
@@ -143,7 +143,7 @@ Iteration result
 
 > **validateConfig**(`config`): `boolean`
 
-Defined in: [algorithms/mandelbrot.ts:114](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/algorithms/mandelbrot.ts#L114)
+Defined in: [algorithms/mandelbrot.ts:114](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/algorithms/mandelbrot.ts#L114)
 
 Validate configuration for this fractal type
 
@@ -167,7 +167,7 @@ Validate configuration for this fractal type
 
 > **generateData**(`config`): `Uint8ClampedArray`
 
-Defined in: [core/base-fractal.ts:41](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/base-fractal.ts#L41)
+Defined in: [core/base-fractal.ts:41](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/base-fractal.ts#L41)
 
 Generate fractal data for given configuration
 

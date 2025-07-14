@@ -1,10 +1,10 @@
-**@prachwal/mandelbrot-generator v1.1.0**
+**@prachwal/mandelbrot-generator v1.1.1**
 
 ***
 
 # Mandelbrot Generator
 
-Professional Mandelbrot fractal generator with TypeScript support, interactive web interface, and multiple output formats.
+Professional fractal generator with TypeScript support, interactive web interface, and multiple output formats. Supports **Mandelbrot Sets**, **Julia Sets**, and **Burning Ship** fractals.
 
 [![NPM Version](https://img.shields.io/npm/v/@prachwal/mandelbrot-generator)](https://www.npmjs.com/package/@prachwal/mandelbrot-generator)
 [![NPM Downloads](https://img.shields.io/npm/dm/@prachwal/mandelbrot-generator)](https://www.npmjs.com/package/@prachwal/mandelbrot-generator)
@@ -36,9 +36,12 @@ npm install
 
 ## ✨ Funkcje
 
-- 🎨 Renderowanie fraktala Mandelbrota na canvas
+- 🎨 **Wieloalgorytmowe generowanie fraktali**:
+  - 🌀 **Mandelbrot Set** - Klasyczny zbiór Mandelbrota z konfigurowalnymi parametrami
+  - 🌸 **Julia Sets** - Zbiory Julii z predefiniowanymi presetami (smok, samolot, spirala, etc.)
+  - 🔥 **Burning Ship** - Fraktal "płonący statek" z unikalną formułą abs(z)² + c
 - 🔍 Konfigurowalne parametry (rozdzielczość, zakres, iteracje)
-- 🌈 Kolorowa paleta dla wizualizacji
+- 🌈 Wielokolorowe palety dla wizualizacji
 - 💻 Wersja dla Node.js (zapisuje do pliku SVG)
 - 🌐 Wersja dla przeglądarki z interaktywnym interfejsem
 - ⚡ Optymalizowane obliczenia
@@ -91,7 +94,7 @@ import {
   type MandelbrotConfig 
 } from '@prachwal/mandelbrot-generator';
 
-// Szybkie generowanie
+// Szybkie generowanie Mandelbrota
 const svg = generateMandelbrotSVG(defaultConfig);
 
 // Z customową konfiguracją
@@ -117,6 +120,31 @@ const elephantSvg = generateMandelbrotSVG({
   ...interestingPoints.elephant,
   maxIterations: 512
 });
+```
+
+### Bezpośrednie użycie algorytmów
+
+```typescript
+import { 
+  MandelbrotFractal, 
+  JuliaFractal, 
+  BurningShipFractal,
+  fractalEngine 
+} from '@prachwal/mandelbrot-generator';
+
+// Użyj konkretnego algorytmu
+const mandelbrot = new MandelbrotFractal();
+const julia = new JuliaFractal();
+const burningShip = new BurningShipFractal();
+
+// Lub użyj FractalEngine do zarządzania algorytmami
+const availableAlgorithms = fractalEngine.getAllAlgorithms();
+const juliaAlgorithm = fractalEngine.getAlgorithm('julia');
+
+// Generuj z dowolnym algorytmem
+const config = julia.defaultConfig;
+config.juliaC = JuliaFractal.getPresets().dragon;
+const imageData = julia.generateData(config);
 ```
 
 ### Node.js CLI (lokalne uruchomienie)
@@ -223,9 +251,61 @@ const config: MandelbrotConfig = {
 - `ocean` - 🌊 Ocean (głębokie niebieskie)
 - `sunset` - 🌅 Zachód słońca (ciepłe kolory)
 
+## 🧮 Dostępne algorytmy fraktali
+
+### 🌀 Mandelbrot Set
+Klasyczny zbiór Mandelbrota z formułą `z_{n+1} = z_n² + c`, gdzie `z_0 = 0`.
+```typescript
+import { MandelbrotFractal } from '@prachwal/mandelbrot-generator';
+
+const mandelbrot = new MandelbrotFractal();
+const config = mandelbrot.defaultConfig;
+const imageData = mandelbrot.generateData(config);
+```
+
+### 🌸 Julia Sets  
+Zbiory Julii z formułą `z_{n+1} = z_n² + c`, gdzie `z_0 = point` i `c` jest stałą.
+```typescript
+import { JuliaFractal } from '@prachwal/mandelbrot-generator';
+
+const julia = new JuliaFractal();
+
+// Użyj predefiniowanego presetu
+const presets = JuliaFractal.getPresets();
+const config = {
+  ...julia.defaultConfig,
+  juliaC: presets.dragon  // { real: -0.7269, imag: 0.1889 }
+};
+
+const imageData = julia.generateData(config);
+```
+
+**Dostępne presety Julia Sets:**
+- `dragon` - Smok Julia (-0.7269, 0.1889)
+- `airplane` - Samolot (-0.75, 0.11)  
+- `spiral` - Spirala (-0.4, 0.6)
+- `dendrite` - Dendryt (0, 1)
+- `rabbit` - Królik (-0.123, 0.745)
+
+### 🔥 Burning Ship
+Fraktal "płonący statek" z formułą `z_{n+1} = (abs(z.real) + i*abs(z.imag))² + c`.
+```typescript
+import { BurningShipFractal } from '@prachwal/mandelbrot-generator';
+
+const burningShip = new BurningShipFractal();
+const config = {
+  ...burningShip.defaultConfig,
+  centerX: -0.5,
+  centerY: -0.6,
+  colorPalette: 'fire'
+};
+
+const imageData = burningShip.generateData(config);
+```
+
 ## Przykłady
 
-### Klasyczny widok
+### Klasyczny widok Mandelbrota
 ```typescript
 import { generateMandelbrotData } from './src/mandelbrot.js';
 
@@ -241,6 +321,72 @@ const config: MandelbrotConfig = {
 };
 
 const imageData = generateMandelbrotData(config);
+```
+
+### Julia Sets z predefiniowanymi presetami
+```typescript
+import { JuliaFractal } from '@prachwal/mandelbrot-generator';
+
+const julia = new JuliaFractal();
+const presets = JuliaFractal.getPresets();
+
+// Smok Julia
+const dragonConfig = {
+    ...julia.defaultConfig,
+    juliaC: presets.dragon,
+    maxIterations: 256,
+    colorPalette: 'fire'
+};
+
+// Samolot Julia
+const airplaneConfig = {
+    ...julia.defaultConfig,
+    juliaC: presets.airplane,
+    maxIterations: 512,
+    colorPalette: 'cool'
+};
+
+const dragonData = julia.generateData(dragonConfig);
+const airplaneData = julia.generateData(airplaneConfig);
+```
+
+### Burning Ship fractal
+```typescript
+import { BurningShipFractal } from '@prachwal/mandelbrot-generator';
+
+const burningShip = new BurningShipFractal();
+const config = {
+    ...burningShip.defaultConfig,
+    width: 1200,
+    height: 800,
+    centerX: -0.5,
+    centerY: -0.6,
+    zoom: 2,
+    maxIterations: 200,
+    colorPalette: 'fire'
+};
+
+const imageData = burningShip.generateData(config);
+```
+
+### Porównanie wszystkich algorytmów
+```typescript
+import { fractalEngine } from '@prachwal/mandelbrot-generator';
+
+const algorithms = fractalEngine.getAllAlgorithms();
+const baseConfig = {
+    width: 400,
+    height: 400,
+    maxIterations: 100,
+    colorPalette: 'rainbow'
+};
+
+// Generuj ten sam obszar różnymi algorytmami
+algorithms.forEach(algo => {
+    const config = { ...algo.defaultConfig, ...baseConfig };
+    const imageData = algo.generateData(config);
+    console.log(`Generated ${algo.name} fractal`);
+});
 ```
 
 ### Eksploracja interesujących miejsc
@@ -423,12 +569,20 @@ Ten projekt wykorzystuje nowoczesny stack technologiczny:
 ### Dostępne eksporty
 
 ```typescript
-// Główne funkcje generowania
+// Główne funkcje generowania (legacy API - tylko Mandelbrot)
 import { 
   generateMandelbrotSVG,     // Generuj SVG jako string
   saveImageAsSVG,            // Zapisz SVG do pliku
   generateMandelbrotData,    // Generuj raw data
   mandelbrotIteration        // Oblicz iteracje dla punktu
+} from '@prachwal/mandelbrot-generator';
+
+// Nowoczesne algorytmy fraktali (zalecane)
+import {
+  MandelbrotFractal,         // Klasa algorytmu Mandelbrota
+  JuliaFractal,              // Klasa algorytmu Julia Sets
+  BurningShipFractal,        // Klasa algorytmu Burning Ship
+  fractalEngine              // Engine do zarządzania algorytmami
 } from '@prachwal/mandelbrot-generator';
 
 // Konfiguracja i kolory  
@@ -448,9 +602,12 @@ import {
 
 // Typy TypeScript
 import type { 
-  MandelbrotConfig,          // Konfiguracja
+  MandelbrotConfig,          // Legacy config (używaj FractalConfig)
+  FractalConfig,             // Nowa uniwersalna konfiguracja
   PaletteType,               // Typ palety  
-  RGBColor                   // Kolor RGB
+  RGBColor,                  // Kolor RGB
+  Complex,                   // Liczba zespolona
+  FractalResult              // Wynik iteracji fraktala
 } from '@prachwal/mandelbrot-generator';
 ```
 

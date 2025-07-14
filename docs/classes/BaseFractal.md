@@ -1,4 +1,4 @@
-[**@prachwal/mandelbrot-generator v1.1.0**](../README.md)
+[**@prachwal/mandelbrot-generator v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Class: `abstract` BaseFractal
 
-Defined in: [core/base-fractal.ts:12](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/base-fractal.ts#L12)
+Defined in: [core/base-fractal.ts:12](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/base-fractal.ts#L12)
 
 Abstract base class for all fractal algorithms
 Provides common interface and functionality for fractal generation
@@ -37,7 +37,7 @@ Provides common interface and functionality for fractal generation
 
 > `abstract` `readonly` **id**: `string`
 
-Defined in: [core/base-fractal.ts:14](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/base-fractal.ts#L14)
+Defined in: [core/base-fractal.ts:14](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/base-fractal.ts#L14)
 
 Unique identifier for this fractal type
 
@@ -47,7 +47,7 @@ Unique identifier for this fractal type
 
 > `abstract` `readonly` **name**: `string`
 
-Defined in: [core/base-fractal.ts:17](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/base-fractal.ts#L17)
+Defined in: [core/base-fractal.ts:17](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/base-fractal.ts#L17)
 
 Human-readable name
 
@@ -57,7 +57,7 @@ Human-readable name
 
 > `abstract` `readonly` **description**: `string`
 
-Defined in: [core/base-fractal.ts:20](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/base-fractal.ts#L20)
+Defined in: [core/base-fractal.ts:20](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/base-fractal.ts#L20)
 
 Description of the fractal
 
@@ -67,7 +67,7 @@ Description of the fractal
 
 > `abstract` `readonly` **defaultConfig**: `FractalConfig`
 
-Defined in: [core/base-fractal.ts:23](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/base-fractal.ts#L23)
+Defined in: [core/base-fractal.ts:23](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/base-fractal.ts#L23)
 
 Default configuration for this fractal
 
@@ -77,7 +77,7 @@ Default configuration for this fractal
 
 > `abstract` `readonly` **parameterSchema**: `ParameterSchema`[]
 
-Defined in: [core/base-fractal.ts:26](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/base-fractal.ts#L26)
+Defined in: [core/base-fractal.ts:26](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/base-fractal.ts#L26)
 
 Parameter schema for UI generation
 
@@ -87,7 +87,7 @@ Parameter schema for UI generation
 
 > `abstract` **iterate**(`point`, `config`): `FractalResult`
 
-Defined in: [core/base-fractal.ts:34](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/base-fractal.ts#L34)
+Defined in: [core/base-fractal.ts:34](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/base-fractal.ts#L34)
 
 Core iteration function - must be implemented by each fractal
 
@@ -117,7 +117,7 @@ Iteration result (escape time, convergence info, etc.)
 
 > **generateData**(`config`): `Uint8ClampedArray`
 
-Defined in: [core/base-fractal.ts:41](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/base-fractal.ts#L41)
+Defined in: [core/base-fractal.ts:41](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/base-fractal.ts#L41)
 
 Generate fractal data for given configuration
 
@@ -141,7 +141,7 @@ Image data array
 
 > **validateConfig**(`_config`): `boolean`
 
-Defined in: [core/base-fractal.ts:96](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/core/base-fractal.ts#L96)
+Defined in: [core/base-fractal.ts:96](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/core/base-fractal.ts#L96)
 
 Validate configuration for this fractal type
 

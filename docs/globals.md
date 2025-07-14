@@ -1,8 +1,8 @@
-[**@prachwal/mandelbrot-generator v1.1.0**](README.md)
+[**@prachwal/mandelbrot-generator v1.1.1**](README.md)
 
 ***
 
-# @prachwal/mandelbrot-generator v1.1.0
+# @prachwal/mandelbrot-generator v1.1.1
 
 ## Fileoverview
 

@@ -1,4 +1,4 @@
-[**@prachwal/mandelbrot-generator v1.1.0**](../README.md)
+[**@prachwal/mandelbrot-generator v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: FractalBounds
 
-Defined in: [types.ts:81](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L81)
+Defined in: [types.ts:81](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L81)
 
 Fractal bounds in the complex plane
 
@@ -31,7 +31,7 @@ const bounds: FractalBounds = {
 
 > `readonly` **minReal**: `number`
 
-Defined in: [types.ts:83](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L83)
+Defined in: [types.ts:83](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L83)
 
 Minimum real value (left edge)
 
@@ -41,7 +41,7 @@ Minimum real value (left edge)
 
 > `readonly` **maxReal**: `number`
 
-Defined in: [types.ts:85](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L85)
+Defined in: [types.ts:85](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L85)
 
 Maximum real value (right edge)
 
@@ -51,7 +51,7 @@ Maximum real value (right edge)
 
 > `readonly` **minImaginary**: `number`
 
-Defined in: [types.ts:87](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L87)
+Defined in: [types.ts:87](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L87)
 
 Minimum imaginary value (bottom edge)
 
@@ -61,6 +61,6 @@ Minimum imaginary value (bottom edge)
 
 > `readonly` **maxImaginary**: `number`
 
-Defined in: [types.ts:89](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L89)
+Defined in: [types.ts:89](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L89)
 
 Maximum imaginary value (top edge)

@@ -1,4 +1,4 @@
-[**@prachwal/mandelbrot-generator v1.1.0**](../README.md)
+[**@prachwal/mandelbrot-generator v1.1.1**](../README.md)
 
 ***
 
@@ -8,7 +8,7 @@
 
 > **getColorHex**(`iterations`, `maxIterations`, `paletteType`): `string`
 
-Defined in: [colors.ts:370](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/colors.ts#L370)
+Defined in: [colors.ts:370](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/colors.ts#L370)
 
 Maps iteration count directly to hexadecimal color string
 

@@ -1,4 +1,4 @@
-[**@prachwal/mandelbrot-generator v1.1.0**](../README.md)
+[**@prachwal/mandelbrot-generator v1.1.1**](../README.md)
 
 ***
 
@@ -8,7 +8,7 @@
 
 > **PaletteType** = `"rainbow"` \| `"fire"` \| `"blue"` \| `"grayscale"` \| `"purple"` \| `"sunset"`
 
-Defined in: [types.ts:27](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L27)
+Defined in: [types.ts:27](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L27)
 
 Available color palette types for fractal visualization
 

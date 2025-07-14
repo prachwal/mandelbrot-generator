@@ -1,4 +1,4 @@
-[**@prachwal/mandelbrot-generator v1.1.0**](../README.md)
+[**@prachwal/mandelbrot-generator v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: BoundaryPoint
 
-Defined in: [types.ts:154](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L154)
+Defined in: [types.ts:154](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L154)
 
 A point on the boundary of the Mandelbrot set
 
@@ -30,7 +30,7 @@ const boundaryPoint: BoundaryPoint = {
 
 > `readonly` **x**: `number`
 
-Defined in: [types.ts:156](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L156)
+Defined in: [types.ts:156](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L156)
 
 Real coordinate (x-axis)
 
@@ -40,7 +40,7 @@ Real coordinate (x-axis)
 
 > `readonly` **y**: `number`
 
-Defined in: [types.ts:158](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L158)
+Defined in: [types.ts:158](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L158)
 
 Imaginary coordinate (y-axis)
 
@@ -50,6 +50,6 @@ Imaginary coordinate (y-axis)
 
 > `readonly` **iterations**: `number`
 
-Defined in: [types.ts:160](https://github.com/prachwal/mandelbrot-generator/blob/5b5c3b49b15f9fe9f6b376b7b3d8c1d326229805/src/types.ts#L160)
+Defined in: [types.ts:160](https://github.com/prachwal/mandelbrot-generator/blob/da157e1b866785501d38ccb7552859d4482dd1a8/src/types.ts#L160)
 
 Number of iterations before divergence
