@@ -125,13 +125,29 @@ Wygeneruje plik `mandelbrot.svg` w folderze `output/`.
 
 **Uwaga:** Wersja Node.js generuje pliki SVG zamiast PNG aby uniknąć problemów z zależnościami systemowymi. SVG oferuje skalowalne grafiki wektorowe idealnie nadające się do wizualizacji fraktali.
 
-### Web Interface (lokalne uruchomienie)
+### Web Interface
+
+#### Production Test Environment (zalecane)
 
 ```bash
+cd test_web
+npm install
 npm run serve
 ```
 
-Następnie otwórz http://localhost:8080 w przeglądarce.
+Otwórz http://localhost:8080 - czyste środowisko testowe używające biblioteki jako zależności npm.
+
+#### Development Interface (lokalne uruchomienie)
+
+```bash
+npm run serve  # uruchamia z głównego folderu
+```
+
+Następnie otwórz http://localhost:8081 w przeglądarce.
+
+**Różnice:**
+- `test_web/` - Czyste środowisko używające opublikowanej biblioteki
+- `web/` - Development interface z mieszanym kodem biblioteki/aplikacji
 
 ### Dokumentacja
 

@@ -288,6 +288,14 @@ export * from './types.js';
 export * from './mandelbrot.js';
 export * from './colors.js';
 export * from './config.js';
+
+// Export new plugin architecture
+export * from './core/fractal-engine.js';
+export * from './core/base-fractal.js';
+export * from './algorithms/mandelbrot.js';
+export * from './algorithms/julia.js';
+export * from './algorithms/burning-ship.js';
+
 export { main };
 
 // Run if this is the main module

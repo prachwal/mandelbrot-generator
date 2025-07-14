@@ -14,16 +14,6 @@ import { getColor, rgbToHex, getColorHex } from '../src/colors.js';
 import { defaultConfig } from '../src/config.js';
 import type { MandelbrotConfig } from '../src/types.js';
 
-// Mock console.log
-const originalConsoleLog = console.log;
-beforeEach(() => {
-    console.log = jest.fn();
-});
-
-afterEach(() => {
-    console.log = originalConsoleLog;
-});
-
 describe('mandelbrotIteration', () => {
     test('should return maxIterations for point (0, 0)', () => {
         const result = mandelbrotIteration(0, 0, 100);

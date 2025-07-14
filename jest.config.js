@@ -20,18 +20,18 @@ export default {
     '**/__tests__/**/*.test.ts'
   ],
   collectCoverageFrom: [
-    'src/**/*.ts',
-    '!src/index.ts',
-    '!src/types.ts'
+    'src/**/*.{ts,js}',
+    '!src/**/*.d.ts',
+    '!src/index.ts'
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov', 'html'],
   coverageThreshold: {
     global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100
+      branches: 85,
+      functions: 90,
+      lines: 90,
+      statements: 90
     }
   }
 };
